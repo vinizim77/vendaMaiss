@@ -1,32 +1,38 @@
 .menu{
-    background-color: #353d44;
+    background-color: #313336;
     color: white;
     list-style: none;
     height: 100vh;
+    border-radius: 0px 20px 20px 0px;
 }
-
 .menu-item{
     text-decoration: none;
     font-style: none;
     color: white;
     display: block;
-    padding: 1opx 20px;
-    margin-left: -40px;
-}
+    padding: 10px 20px;
+    margin-left: -50px;
 
+}
 .menu-item:hover{
-font-style: none;
-text-decoration: none;
-color: cornflowerblue;
-font-size: 20px;
+    font-style: none;
+    text-decoration: none;
+    color: red;
+    font-size: 20px;
 }
-
-@media(max-width){
+/* no celular o menu lateral desaparece */
+@media(max-width:768px){
+    .menu{
+        display: none;
+        /* Desaparecer */
+    }
+}
+.card{
+    margin: 5px;
+    box-shadow: 1px 1px 10px gray;
+    padding: 6px;
     
 }
-
-
-
 .painel{
     max-width: 350px;
     min-width: 300px;
