@@ -15,10 +15,21 @@ $resultado = mysqli_query($conexao, query: $sql);
 $colunas = mysqli_fetch_assoc($resultado);
 
 if(mysqli_num_rows($resultado) > 0){
-echo "login efetuado com sucesso!";
-}else{
-    echo "Erroooouuu! não encontrado!";
+//echo "login efetuado com sucesso!";
+//inicia sessão
+session_start();
+$_SESSION['usuario']= $colunas['nome'];
+$_SESSION['cpf']= $cpf;
+$_SESSION['senha'] = $senha;
 
+
+//direcionar para a página principal
+header('location: principal.php');
+}else{
+    //echo "Erroooouuu! não encontrado!";
+    session_unset();
+    session_destroy();
+    header( 'location: index.php');
 
 }
 ?>
